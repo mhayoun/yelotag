@@ -1,21 +1,22 @@
-import React, { useState } from 'react';
-import { useWebsiteLogic } from './useWebsiteLogic';
+import React, {useState} from 'react';
+import {useWebsiteLogic} from './useWebsiteLogic';
 
 function App() {
-    const { lang, t, toggleLanguage } = useWebsiteLogic();
+    const {lang, t, toggleLanguage} = useWebsiteLogic();
     const [activeFeature, setActiveFeature] = useState(null);
 
     // Helper to handle navigation and scroll
     const navigateToFeature = (index) => {
         setActiveFeature(index);
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        window.scrollTo({top: 0, behavior: 'smooth'});
     };
 
     return (
         /* Main container: Deep dark blue-black background */
         <div className={`min-h-screen bg-[#020617] font-sans text-slate-200 ${lang === 'he' ? 'rtl' : 'ltr'}`}>
 
-            <nav className="p-3 bg-[#0f172a]/80 backdrop-blur-md border-b border-blue-900/50 flex justify-between items-center sticky top-0 z-50">
+            <nav
+                className="p-3 bg-[#0f172a]/80 backdrop-blur-md border-b border-blue-900/50 flex justify-between items-center sticky top-0 z-50">
                 <div className="flex items-center gap-8">
                     {/* Logo - Click to go home */}
                     <h1
@@ -40,7 +41,8 @@ function App() {
                 </div>
 
                 <div className="flex items-center gap-4">
-                    <button className="text-sm font-bold text-blue-400 border border-blue-400/50 px-5 py-2 rounded-full hover:bg-blue-400 hover:text-white transition-all shadow-[0_0_10px_rgba(96,165,250,0.2)]">
+                    <button
+                        className="text-sm font-bold text-blue-400 border border-blue-400/50 px-5 py-2 rounded-full hover:bg-blue-400 hover:text-white transition-all shadow-[0_0_10px_rgba(96,165,250,0.2)]">
                         {t.nav.contact}
                     </button>
 
@@ -54,7 +56,13 @@ function App() {
             </nav>
 
             {/* Hero Section */}
-            <header className="py-16 px-6 text-center bg-gradient-to-b from-[#1e293b] to-[#020617]">
+            <header
+                className={`py-16 px-6 text-center transition-all duration-700 ease-in-out bg-gradient-to-b from-[#1e293b] to-[#020617] ${
+                    activeFeature !== null
+                        ? "opacity-20 scale-95 blur-sm grayscale pointer-events-none"
+                        : "opacity-100 scale-100 blur-0 grayscale-0"
+                }`}
+            >
                 <div className="max-w-4xl mx-auto">
                     <h2 className="text-3xl md:text-3xl font-black mb-6 leading-tight uppercase tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-300 to-indigo-500">
                         {t.hero}
@@ -77,7 +85,8 @@ function App() {
                                 className="p-8 rounded-2xl border border-blue-900/50 bg-[#0f172a] hover:border-cyan-500/50 shadow-2xl transition-all duration-500 group cursor-pointer"
                             >
                                 <div className="flex items-center gap-4 mb-4">
-                                    <span className="text-4xl drop-shadow-[0_0_10px_rgba(255,255,255,0.3)] group-hover:scale-110 transition-transform">
+                                    <span
+                                        className="text-4xl drop-shadow-[0_0_10px_rgba(255,255,255,0.3)] group-hover:scale-110 transition-transform">
                                         {f.icon}
                                     </span>
                                     <h3 className="text-2xl font-black text-blue-100 group-hover:text-cyan-400 transition-colors">
@@ -87,7 +96,8 @@ function App() {
                                 <p className="text-slate-400 leading-relaxed text-lg font-light">
                                     {f.desc}
                                 </p>
-                                <div className="mt-4 text-cyan-500 text-sm font-bold uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity">
+                                <div
+                                    className="mt-4 text-cyan-500 text-sm font-bold uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity">
                                     {lang === 'he' ? 'קרא עוד ←' : 'Learn More →'}
                                 </div>
                             </div>
@@ -96,7 +106,8 @@ function App() {
                 ) : (
                     /* DETAIL VIEW */
                     <div className="max-w-4xl mx-auto animate-in fade-in slide-in-from-bottom-4 duration-500">
-                        <div className="p-10 rounded-3xl border border-cyan-500/30 bg-[#0f172a] shadow-[0_0_50px_rgba(6,182,212,0.1)]">
+                        <div
+                            className="p-10 rounded-3xl border border-cyan-500/30 bg-[#0f172a] shadow-[0_0_50px_rgba(6,182,212,0.1)]">
                             <div className="flex items-center gap-6 mb-8">
                                 <span className="text-6xl">{t.features[activeFeature].icon}</span>
                                 <h2 className="text-4xl font-black text-white uppercase tracking-tighter">
@@ -108,10 +119,25 @@ function App() {
                                 <p className="text-xl text-slate-300 leading-loose">
                                     {t.features[activeFeature].desc}
                                 </p>
+
+                                <ul className="mt-8 space-y-4 border-l-2 border-cyan-500/20 pl-6">
+                                    {t.features[activeFeature].details.map((detail, index) => (
+                                        <li key={index} className="flex items-start gap-3 text-slate-400 text-lg group">
+                                            <span
+                                                className="text-cyan-400 font-bold mt-1 group-hover:scale-125 transition-transform">
+                                                ✓
+                                            </span>
+                                            <span className="group-hover:text-slate-200 transition-colors">
+                                            {detail}
+                                            </span>
+                                        </li>
+                                    ))}
+                                </ul>
                             </div>
 
                             {/* Navigation Buttons */}
-                            <div className="mt-12 flex flex-col md:flex-row gap-4 justify-between border-t border-slate-800 pt-8">
+                            <div
+                                className="mt-12 flex flex-col md:flex-row gap-4 justify-between border-t border-slate-800 pt-8">
                                 <button
                                     onClick={() => setActiveFeature(null)}
                                     className="flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-slate-800 text-white hover:bg-slate-700 transition-all font-bold"
@@ -151,9 +177,12 @@ function App() {
                                 key={idx}
                                 className="group block bg-[#1e293b]/30 border border-slate-800 rounded-xl overflow-hidden hover:border-blue-500/50 transition-all duration-300"
                             >
-                                <div className="h-48 bg-slate-800 flex items-center justify-center group-hover:bg-blue-900/40 transition-colors relative overflow-hidden">
-                                    <div className="absolute inset-0 bg-gradient-to-t from-blue-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                                    <span className="text-6xl font-black text-slate-700 group-hover:text-blue-400/30 transition-all">
+                                <div
+                                    className="h-48 bg-slate-800 flex items-center justify-center group-hover:bg-blue-900/40 transition-colors relative overflow-hidden">
+                                    <div
+                                        className="absolute inset-0 bg-gradient-to-t from-blue-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"/>
+                                    <span
+                                        className="text-6xl font-black text-slate-700 group-hover:text-blue-400/30 transition-all">
                                         {site.name[0]}
                                     </span>
                                 </div>
