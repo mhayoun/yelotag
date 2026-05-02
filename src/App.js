@@ -1,23 +1,43 @@
-import React, { useState } from 'react';
-import { useWebsiteLogic } from './useWebsiteLogic';
+import React, {useState} from 'react';
+import {useWebsiteLogic} from './useWebsiteLogic';
 
 function App() {
-    const { lang, t, toggleLanguage } = useWebsiteLogic();
+    const {lang, t, toggleLanguage} = useWebsiteLogic();
     const [activeFeature, setActiveFeature] = useState(null);
+    const [formData, setFormData] = useState({name: '', email: '', phone: '', message: ''});
+
+    const handleFormSubmit = (e) => {
+        e.preventDefault();
+        console.log("Form Submitted:", formData);
+        alert(lang === 'he' ? 'ההודעה נשלחה בהצלחה!' : 'Message sent successfully!');
+    };
 
     const navigateToFeature = (index) => {
         setActiveFeature(index);
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        window.scrollTo({top: 0, behavior: 'smooth'});
     };
 
+    const scrollToContact = () => {
+        const contactSection = document.getElementById('contact-section');
+        if (contactSection) {
+            contactSection.scrollIntoView({behavior: 'smooth'});
+        }
+    };
+
+
     return (
-        <div className={`min-h-screen bg-[#020617] font-sans text-slate-200 flex flex-col ${lang === 'he' ? 'rtl' : 'ltr'}`}>
+        <div
+            className={`min-h-screen bg-[#020617] font-sans text-slate-200 flex flex-col ${lang === 'he' ? 'rtl' : 'ltr'}`}>
 
             {/* NAVBAR */}
-            <nav className="p-3 bg-[#0f172a]/80 backdrop-blur-md border-b border-blue-900/50 flex justify-between items-center sticky top-0 z-50">
+            <nav
+                className="p-3 bg-[#0f172a]/80 backdrop-blur-md border-b border-blue-900/50 flex justify-between items-center sticky top-0 z-50">
                 <div className="flex items-center gap-8">
                     <h1
-                        onClick={() => setActiveFeature(null)}
+                        onClick={() => {
+                            setActiveFeature(null);
+                            window.scrollTo({top: 0, behavior: 'smooth'}); // Scroll to top smoothly
+                        }}
                         className="text-xl font-black text-blue-400 tracking-tighter drop-shadow-[0_0_8px_rgba(96,165,250,0.5)] cursor-pointer"
                     >
                         {t.title}
@@ -35,10 +55,13 @@ function App() {
                     </div>
                 </div>
                 <div className="flex items-center gap-4">
-                    <button className="text-sm font-bold text-blue-400 border border-blue-400/50 px-5 py-2 rounded-full hover:bg-blue-400 hover:text-white transition-all">
+                    <button
+                        onClick={scrollToContact}
+                        className="text-sm font-bold text-blue-400 border border-blue-400/50 px-5 py-2 rounded-full hover:bg-blue-400 hover:text-white transition-all">
                         {t.nav.contact}
                     </button>
-                    <button onClick={toggleLanguage} className="bg-blue-600/10 border border-blue-500/30 text-blue-400 px-3 py-1.5 rounded-md font-mono text-xs hover:bg-blue-600 hover:text-white transition-all">
+                    <button onClick={toggleLanguage}
+                            className="bg-blue-600/10 border border-blue-500/30 text-blue-400 px-3 py-1.5 rounded-md font-mono text-xs hover:bg-blue-600 hover:text-white transition-all">
                         {t.nav.langLabel}
                     </button>
                 </div>
@@ -46,7 +69,8 @@ function App() {
 
             {/* HERO SECTION */}
             {activeFeature === null && (
-                <header className="py-16 px-6 text-center bg-gradient-to-b from-[#1e293b] to-[#020617] animate-in fade-in zoom-in-95 duration-700">
+                <header
+                    className="py-16 px-6 text-center bg-gradient-to-b from-[#1e293b] to-[#020617] animate-in fade-in zoom-in-95 duration-700">
                     <div className="max-w-4xl mx-auto">
                         <h2 className="text-3xl md:text-3xl font-black mb-6 leading-tight uppercase tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-300 to-indigo-500">
                             {t.hero}
@@ -71,11 +95,13 @@ function App() {
                                     className="p-8 rounded-2xl border border-blue-900/50 bg-[#0f172a] hover:border-cyan-500/50 shadow-2xl transition-all duration-500 group cursor-pointer"
                                 >
                                     <div className="flex items-center gap-4 mb-4">
-                                        <span className="text-4xl group-hover:scale-110 transition-transform">{f.icon}</span>
+                                        <span
+                                            className="text-4xl group-hover:scale-110 transition-transform">{f.icon}</span>
                                         <h3 className="text-2xl font-black text-blue-100 group-hover:text-cyan-400 transition-colors">{f.title}</h3>
                                     </div>
                                     <p className="text-slate-400 leading-relaxed text-lg font-light">{f.desc}</p>
-                                    <div className="mt-4 text-cyan-500 text-sm font-bold uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity">
+                                    <div
+                                        className="mt-4 text-cyan-500 text-sm font-bold uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity">
                                         {lang === 'he' ? 'קרא עוד ←' : 'Learn More →'}
                                     </div>
                                 </div>
@@ -84,7 +110,8 @@ function App() {
                     ) : (
                         /* DETAIL VIEW */
                         <div className="max-w-4xl mx-auto animate-in fade-in slide-in-from-top-8 duration-500">
-                            <div className="p-10 rounded-3xl border border-cyan-500/30 bg-[#0f172a] shadow-[0_0_50px_rgba(6,182,212,0.1)]">
+                            <div
+                                className="p-10 rounded-3xl border border-cyan-500/30 bg-[#0f172a] shadow-[0_0_50px_rgba(6,182,212,0.1)]">
                                 <div className="flex items-center gap-6 mb-8">
                                     <span className="text-6xl">{t.features[activeFeature].icon}</span>
                                     <h2 className="text-4xl font-black text-white uppercase tracking-tighter">
@@ -95,9 +122,12 @@ function App() {
                                     <p className="text-xl text-slate-300 leading-loose mb-6">{t.features[activeFeature].desc}</p>
                                     <ul className="mt-8 space-y-4 border-l-2 border-cyan-500/20 pl-6">
                                         {t.features[activeFeature].details?.map((detail, index) => (
-                                            <li key={index} className="flex items-start gap-3 text-slate-400 text-lg group">
-                                                <span className="text-cyan-400 font-bold mt-1 group-hover:scale-125 transition-transform">✓</span>
-                                                <span className="group-hover:text-slate-200 transition-colors">{detail}</span>
+                                            <li key={index}
+                                                className="flex items-start gap-3 text-slate-400 text-lg group">
+                                                <span
+                                                    className="text-cyan-400 font-bold mt-1 group-hover:scale-125 transition-transform">✓</span>
+                                                <span
+                                                    className="group-hover:text-slate-200 transition-colors">{detail}</span>
                                             </li>
                                         ))}
                                     </ul>
@@ -120,14 +150,16 @@ function App() {
                                                 onClick={() => navigateToFeature((activeFeature - 1 + t.features.length) % t.features.length)}
                                                 className="flex-1 md:flex-none px-6 py-3 rounded-xl border border-blue-500/30 text-blue-400 hover:bg-blue-500/10 transition-all font-bold"
                                             >
-                                                <span className={lang === 'he' ? '' : 'rotate-180 inline-block'}>➜</span> {lang === 'he' ? 'הקודם' : 'Prev'}
+                                                <span
+                                                    className={lang === 'he' ? '' : 'rotate-180 inline-block'}>➜</span> {lang === 'he' ? 'הקודם' : 'Prev'}
                                             </button>
 
                                             <button
                                                 onClick={() => navigateToFeature((activeFeature + 1) % t.features.length)}
                                                 className="flex-1 md:flex-none px-8 py-3 rounded-xl bg-blue-600 text-white hover:bg-cyan-500 transition-all font-bold shadow-[0_0_15px_rgba(37,99,235,0.3)]"
                                             >
-                                                {lang === 'he' ? 'הבא' : 'Next'} <span className={lang === 'he' ? 'rotate-180 inline-block' : ''}>➜</span>
+                                                {lang === 'he' ? 'הבא' : 'Next'} <span
+                                                className={lang === 'he' ? 'rotate-180 inline-block' : ''}>➜</span>
                                             </button>
                                         </div>
                                     </div>
@@ -145,9 +177,16 @@ function App() {
                     <p className="text-slate-500 mb-12 font-mono uppercase text-sm tracking-widest">{t.dashboardTag}</p>
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
                         {t.sites.map((site, idx) => (
-                            <a href={site.url} key={idx} className="group block bg-[#1e293b]/30 border border-slate-800 rounded-xl overflow-hidden hover:border-blue-500/50 transition-all duration-300">
-                                <div className="h-48 bg-slate-800 flex items-center justify-center group-hover:bg-blue-900/40 transition-colors relative">
-                                    <span className="text-6xl font-black text-slate-700 group-hover:text-blue-400/30 transition-all">{site.name[0]}</span>
+                            <a
+                                href={site.url}
+                                key={idx}
+                                target="_blank"             // Opens in a new page
+                                rel="noopener noreferrer"    // Security best practice
+                                className="group block bg-[#1e293b]/30 border border-slate-800 rounded-xl overflow-hidden hover:border-blue-500/50 transition-all duration-300">
+                                <div
+                                    className="h-48 bg-slate-800 flex items-center justify-center group-hover:bg-blue-900/40 transition-colors relative">
+                                    <span
+                                        className="text-6xl font-black text-slate-700 group-hover:text-blue-400/30 transition-all">{site.name[0]}</span>
                                 </div>
                                 <div className="p-5 text-left">
                                     <p className="text-[10px] font-bold text-cyan-500 uppercase mb-1 tracking-[3px]">{site.category}</p>
@@ -159,11 +198,95 @@ function App() {
                 </div>
             </section>
 
-            {/* FOOTER */}
-            <footer className="bg-black text-white py-16 text-center px-6 border-t border-blue-900/30">
-                <p className="text-3xl font-black mb-4 italic tracking-tighter text-blue-500 uppercase">Extreme Customization. Absolute Control.</p>
-                <div className="mt-8 pt-8 border-t border-slate-900 text-xs opacity-40 font-mono">
-                    © {new Date().getFullYear()} {t.title}
+            {/* FOOTER - RESTRUCTURED */}
+            <footer id="contact-section" className="bg-black text-white py-20 px-6 border-t border-blue-900/30">
+                <div className="max-w-6xl mx-auto">
+
+                    {/* Header Slogan from Content.js */}
+                    <div className="text-center mb-16">
+                        <p className="text-3xl md:text-5xl font-black italic tracking-tighter text-blue-500 uppercase">
+                            {t.footerSlogan}
+                        </p>
+                        <p className="text-slate-500 font-mono text-xs mt-4 uppercase tracking-[0.4em]">
+                            {t.footerSub}
+                        </p>
+                    </div>
+
+                    {/* Two Columns Grid */}
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 border-t border-slate-900 pt-16">
+
+                        {/* COLUMN 2: CIE DETAILS */}
+                        <div className={`flex flex-col justify-center ${lang === 'he' ? 'text-right' : 'text-left'}`}>
+                            <h3 className="text-2xl font-black mb-6 text-cyan-400 uppercase tracking-tight">
+                                {t.cieTitle}
+                            </h3>
+                            <div className="space-y-6">
+                                <div>
+                                    <p className="text-slate-500 text-xs font-mono uppercase tracking-widest mb-1">Company
+                                        Name</p>
+                                    <p className="text-xl font-bold text-white">Yelotag Cie</p>
+                                </div>
+                                <div>
+                                    <p className="text-slate-500 text-xs font-mono uppercase tracking-widest mb-1">Address</p>
+                                    <p className="text-lg text-slate-300">
+                                        קויפמן יחזקאל 15<br/>
+                                        ירושלים 9375918
+                                    </p>
+                                </div>
+                                <div>
+                                    <p className="text-slate-500 text-xs font-mono uppercase tracking-widest mb-1">Direct
+                                        Line</p>
+                                    <a href="tel:0545665417"
+                                       className="text-2xl font-black text-blue-400 hover:text-white transition-colors">
+                                        054-5665417
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* COLUMN 1: CONTACT US */}
+                        <div className="bg-[#0f172a]/50 p-8 rounded-2xl border border-slate-800 shadow-xl">
+                            <h3 className="text-2xl font-black mb-6 text-white uppercase tracking-tight">
+                                {t.contactTitle}
+                            </h3>
+                            <form onSubmit={handleFormSubmit} className="space-y-4">
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    <input
+                                        type="text"
+                                        placeholder={lang === 'he' ? 'שם מלא' : 'Full Name'}
+                                        className="bg-slate-900 border border-slate-700 rounded-lg p-3 text-sm focus:border-blue-500 outline-none text-white w-full"
+                                        onChange={(e) => setFormData({...formData, name: e.target.value})}
+                                        required
+                                    />
+                                    <input
+                                        type="email"
+                                        placeholder={lang === 'he' ? 'אימייל' : 'Email'}
+                                        className="bg-slate-900 border border-slate-700 rounded-lg p-3 text-sm focus:border-blue-500 outline-none text-white w-full"
+                                        onChange={(e) => setFormData({...formData, email: e.target.value})}
+                                        required
+                                    />
+                                </div>
+                                <textarea
+                                    rows="3"
+                                    placeholder={lang === 'he' ? 'הודעה' : 'Message'}
+                                    className="w-full bg-slate-900 border border-slate-700 rounded-lg p-3 text-sm focus:border-blue-500 outline-none text-white"
+                                    onChange={(e) => setFormData({...formData, message: e.target.value})}
+                                    required
+                                ></textarea>
+                                <button type="submit"
+                                        className="w-full bg-blue-600 hover:bg-cyan-500 text-white font-black py-3 rounded-lg transition-all uppercase tracking-widest text-xs">
+                                    {t.sendBtn}
+                                </button>
+                            </form>
+                        </div>
+
+                    </div>
+
+                    <div className="mt-20 pt-8 border-t border-slate-900 text-center">
+                        <div className="text-[10px] opacity-30 font-mono uppercase tracking-[0.2em]">
+                            © {new Date().getFullYear()} {t.title} • Yelotag Cie
+                        </div>
+                    </div>
                 </div>
             </footer>
         </div>

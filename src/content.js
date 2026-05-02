@@ -7,6 +7,11 @@ export const content = {
             contact: "Contact Us",
             langLabel: "עברית"
         },
+        footerSlogan: "EXTREME CUSTOMIZATION. ABSOLUTE CONTROL.",
+        footerSub: "Building the digital future",
+        contactTitle: "Contact Us",
+        cieTitle: "Cie Details",
+        sendBtn: "Send Message",
         features: [
             {
                 title: "AI-Integrated Page Generator",
@@ -56,9 +61,9 @@ export const content = {
         portfolioTitle: "Live Projects",
         dashboardTag: "Run your business from one dashboard",
         sites: [
-            {name: "Design Co.", url: "#", category: "E-Commerce"},
-            {name: "Law Firm X", url: "#", category: "Professional"},
-            {name: "Tech Blog", url: "#", category: "Content"}
+            {name: "Zdakah.com", url: "https://www.zdakah.com", category: "CrownFunding"},
+            {name: "Mercazi.info", url: "https://www.mercazi.info", category: "Children Center"},
+            {name: "mercaz-zmicha.com", url: "https://mercaz-zmicha.com", category: "Education"}
         ]
     },
     he: {
@@ -69,6 +74,11 @@ export const content = {
             contact: "צור קשר",
             langLabel: "ENGLISH"
         },
+        footerSlogan: "התאמה אישית קיצונית. שליטה מוחלטת.",
+        footerSub: "בונים את העתיד הדיגיטלי",
+        contactTitle: "צרו קשר",
+        cieTitle: "פרטי החברה",
+        sendBtn: "שלח הודעה",
         features: [
             {
                 title: "מחולל דפים עם בינה מלאכותית",
@@ -118,9 +128,9 @@ export const content = {
         portfolioTitle: "פרויקטים נבחרים",
         dashboardTag: "נהלו את כל העסק מלוח בקרה אחד",
         sites: [
-            {name: "סטודיו לעיצוב", url: "#", category: "מסחר"},
-            {name: "משרד עורכי דין", url: "#", category: "מקצועי"},
-            {name: "בלוג טכנולוגי", url: "#", category: "תוכן"}
+            {name: "Zdakah.com", url: "https://www.zdakah.com", category: "גיוס המונים"},
+            {name: "Mercazi.info", url: "https://www.mercazi.info", category: "מרכז לילדים"},
+            {name: "mercaz-zmicha.com", url: "https://mercaz-zmicha.com", category: "חינוך"}
         ]
     }
 };
