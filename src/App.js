@@ -33,15 +33,20 @@ function App() {
             <nav
                 className="p-3 bg-[#0f172a]/80 backdrop-blur-md border-b border-blue-900/50 flex justify-between items-center sticky top-0 z-50">
                 <div className="flex items-center gap-8">
-                    <h1
+                    <button
                         onClick={() => {
                             setActiveFeature(null);
-                            window.scrollTo({top: 0, behavior: 'smooth'}); // Scroll to top smoothly
+                            window.scrollTo({top: 0, behavior: 'smooth'});
                         }}
-                        className="text-xl font-black text-blue-400 tracking-tighter drop-shadow-[0_0_8px_rgba(96,165,250,0.5)] cursor-pointer"
+                        className="flex items-center cursor-pointer transition-transform hover:scale-105"
                     >
-                        {t.title}
-                    </h1>
+                        <img
+                            src="/images/logo.png"
+                            alt="yeloTag"
+                            // Changement léger ici : 14px au lieu de 12px, 0.8 d'opacité au lieu de 0.7
+                            className="h-16 w-auto drop-shadow-[0_0_14px_rgba(34,211,238,0.8)]"
+                        />
+                    </button>
                     <div className="hidden md:flex gap-6">
                         {t.features.map((f, i) => (
                             <button
