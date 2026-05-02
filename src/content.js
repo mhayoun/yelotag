@@ -1,6 +1,6 @@
 export const content = {
     en: {
-        title: "YELOTAG",
+        title: "yeloTag.com",
         hero: "Superior Foundation. Absolute Autonomy.",
         sub: "The TAMA 38 for your website. We rebuild the facade, you stay in control with absolute autonomy.",
         nav: {
@@ -71,7 +71,7 @@ export const content = {
         ]
     },
     he: {
-        title: "YELOTAG",
+        title: "yeloTag.com",
         hero: "תשתית חכמה — שליטה מוחלטת",
         sub: "תמ״א 38 לאתר שלך. אנחנו מחדשים את החזית, אתם מקבלים שליטה מוחלטת וכלים לניהול עצמאי.",
         nav: {
