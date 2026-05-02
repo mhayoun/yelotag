@@ -63,7 +63,9 @@ export const content = {
         sites: [
             {name: "Zdakah.com", url: "https://www.zdakah.com", category: "CrownFunding", image:"/images/zdakah.png"},
             {name: "Mercazi.info", url: "https://www.mercazi.info", category: "Children Center", image:"/images/zmiha.png"},
-            {name: "mercaz-zmicha.com", url: "https://mercaz-zmicha.com", category: "Education", image:"/images/mercazi.png"}
+            {name: "mercaz-zmicha.com", url: "https://mercaz-zmicha.com", category: "Education", image:"/images/mercazi.png"},
+            {name: "henne-five.vercel.app", url: "https://henne-five.vercel.app/", category: "Evenements", image:"/images/henne.png"},
+            {name: "CompBuilder.com", url: "https://unsteadfast-dionna-poignantly.ngrok-free.dev", category: "System Modeling", image:"/images/compBuilder.png"},
         ]
     },
     he: {
@@ -130,7 +132,9 @@ export const content = {
         sites: [
             {name: "Zdakah.com", url: "https://www.zdakah.com", category: "גיוס המונים", image:"/images/zdakah.png"},
             {name: "Mercazi.info", url: "https://www.mercazi.info", category: "מרכז לילדים", image:"/images/mercazi.png"},
-            {name: "mercaz-zmicha.com", url: "https://mercaz-zmicha.com", category: "חינוך", image:"/images/zmiha.png"}
+            {name: "mercaz-zmicha.com", url: "https://mercaz-zmicha.com", category: "חינוך", image:"/images/zmiha.png"},
+            {name: "henne-five.vercel.app", url: "https://henne-five.vercel.app/", category: "ארועים", image:"/images/henne.png"},
+            {name: "CompBuilder.com", url: "https://unsteadfast-dionna-poignantly.ngrok-free.dev", category: "מדע", image:"/images/compBuilder.png"}
         ]
     }
 };
