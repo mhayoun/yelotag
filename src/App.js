@@ -180,17 +180,39 @@ function App() {
                             <a
                                 href={site.url}
                                 key={idx}
-                                target="_blank"             // Opens in a new page
-                                rel="noopener noreferrer"    // Security best practice
-                                className="group block bg-[#1e293b]/30 border border-slate-800 rounded-xl overflow-hidden hover:border-blue-500/50 transition-all duration-300">
-                                <div
-                                    className="h-48 bg-slate-800 flex items-center justify-center group-hover:bg-blue-900/40 transition-colors relative">
-                                    <span
-                                        className="text-6xl font-black text-slate-700 group-hover:text-blue-400/30 transition-all">{site.name[0]}</span>
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="group block bg-[#1e293b]/30 border border-slate-800 rounded-xl overflow-hidden hover:border-blue-500/50 transition-all duration-300"
+                            >
+                                {/* IMAGE CONTAINER */}
+                                <div className="h-48 bg-slate-800 overflow-hidden relative">
+                                    {site.image ? (
+                                        <img
+                                            src={site.image}
+                                            alt={site.name}
+                                            className="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500"
+                                        />
+                                    ) : (
+                                        /* Fallback to the letter if no image exists */
+                                        <div className="flex items-center justify-center h-full">
+                        <span
+                            className="text-6xl font-black text-slate-700 group-hover:text-blue-400/30 transition-all">
+                            {site.name[0]}
+                        </span>
+                                        </div>
+                                    )}
+                                    {/* Dark Overlay on Hover */}
+                                    <div
+                                        className="absolute inset-0 bg-blue-900/20 opacity-0 group-hover:opacity-100 transition-opacity"/>
                                 </div>
-                                <div className="p-5 text-left">
-                                    <p className="text-[10px] font-bold text-cyan-500 uppercase mb-1 tracking-[3px]">{site.category}</p>
-                                    <h4 className="text-xl font-bold text-slate-100 group-hover:text-white">{site.name}</h4>
+
+                                <div className={`p-5 ${lang === 'he' ? 'text-right' : 'text-left'}`}>
+                                    <p className="text-[10px] font-bold text-cyan-500 uppercase mb-1 tracking-[3px]">
+                                        {site.category}
+                                    </p>
+                                    <h4 className="text-xl font-bold text-slate-100 group-hover:text-white">
+                                        {site.name}
+                                    </h4>
                                 </div>
                             </a>
                         ))}
