@@ -61,9 +61,9 @@ export const content = {
         portfolioTitle: "Live Projects",
         dashboardTag: "Run your business from one dashboard",
         sites: [
-            {name: "Zdakah.com", url: "https://www.zdakah.com", category: "CrownFunding", image:"./images/zdakah.png"},
-            {name: "Mercazi.info", url: "https://www.mercazi.info", category: "Children Center", image:"./images/zmiha.png"},
-            {name: "mercaz-zmicha.com", url: "https://mercaz-zmicha.com", category: "Education", image:"./images/mercazi.png"}
+            {name: "Zdakah.com", url: "https://www.zdakah.com", category: "CrownFunding", image:"/images/zdakah.png"},
+            {name: "Mercazi.info", url: "https://www.mercazi.info", category: "Children Center", image:"/images/zmiha.png"},
+            {name: "mercaz-zmicha.com", url: "https://mercaz-zmicha.com", category: "Education", image:"/images/mercazi.png"}
         ]
     },
     he: {
@@ -128,9 +128,9 @@ export const content = {
         portfolioTitle: "פרויקטים נבחרים",
         dashboardTag: "נהלו את כל העסק מלוח בקרה אחד",
         sites: [
-            {name: "Zdakah.com", url: "https://www.zdakah.com", category: "גיוס המונים", image:"./images/zdakah.png"},
-            {name: "Mercazi.info", url: "https://www.mercazi.info", category: "מרכז לילדים", image:"./images/mercazi.png"},
-            {name: "mercaz-zmicha.com", url: "https://mercaz-zmicha.com", category: "חינוך", image:"./images/zmiha.png"}
+            {name: "Zdakah.com", url: "https://www.zdakah.com", category: "גיוס המונים", image:"/images/zdakah.png"},
+            {name: "Mercazi.info", url: "https://www.mercazi.info", category: "מרכז לילדים", image:"/images/mercazi.png"},
+            {name: "mercaz-zmicha.com", url: "https://mercaz-zmicha.com", category: "חינוך", image:"/images/zmiha.png"}
         ]
     }
 };
