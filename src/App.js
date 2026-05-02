@@ -1,32 +1,27 @@
-import React, {useState} from 'react';
-import {useWebsiteLogic} from './useWebsiteLogic';
+import React, { useState } from 'react';
+import { useWebsiteLogic } from './useWebsiteLogic';
 
 function App() {
-    const {lang, t, toggleLanguage} = useWebsiteLogic();
+    const { lang, t, toggleLanguage } = useWebsiteLogic();
     const [activeFeature, setActiveFeature] = useState(null);
 
-    // Helper to handle navigation and scroll
     const navigateToFeature = (index) => {
         setActiveFeature(index);
-        window.scrollTo({top: 0, behavior: 'smooth'});
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     };
 
     return (
-        /* Main container: Deep dark blue-black background */
-        <div className={`min-h-screen bg-[#020617] font-sans text-slate-200 ${lang === 'he' ? 'rtl' : 'ltr'}`}>
+        <div className={`min-h-screen bg-[#020617] font-sans text-slate-200 flex flex-col ${lang === 'he' ? 'rtl' : 'ltr'}`}>
 
-            <nav
-                className="p-3 bg-[#0f172a]/80 backdrop-blur-md border-b border-blue-900/50 flex justify-between items-center sticky top-0 z-50">
+            {/* NAVBAR */}
+            <nav className="p-3 bg-[#0f172a]/80 backdrop-blur-md border-b border-blue-900/50 flex justify-between items-center sticky top-0 z-50">
                 <div className="flex items-center gap-8">
-                    {/* Logo - Click to go home */}
                     <h1
                         onClick={() => setActiveFeature(null)}
                         className="text-xl font-black text-blue-400 tracking-tighter drop-shadow-[0_0_8px_rgba(96,165,250,0.5)] cursor-pointer"
                     >
                         {t.title}
                     </h1>
-
-                    {/* Feature Short Names - Updated to buttons for state control */}
                     <div className="hidden md:flex gap-6">
                         {t.features.map((f, i) => (
                             <button
@@ -39,160 +34,102 @@ function App() {
                         ))}
                     </div>
                 </div>
-
                 <div className="flex items-center gap-4">
-                    <button
-                        className="text-sm font-bold text-blue-400 border border-blue-400/50 px-5 py-2 rounded-full hover:bg-blue-400 hover:text-white transition-all shadow-[0_0_10px_rgba(96,165,250,0.2)]">
+                    <button className="text-sm font-bold text-blue-400 border border-blue-400/50 px-5 py-2 rounded-full hover:bg-blue-400 hover:text-white transition-all">
                         {t.nav.contact}
                     </button>
-
-                    <button
-                        onClick={toggleLanguage}
-                        className="bg-blue-600/10 border border-blue-500/30 text-blue-400 px-3 py-1.5 rounded-md font-mono text-xs hover:bg-blue-600 hover:text-white transition-all"
-                    >
+                    <button onClick={toggleLanguage} className="bg-blue-600/10 border border-blue-500/30 text-blue-400 px-3 py-1.5 rounded-md font-mono text-xs hover:bg-blue-600 hover:text-white transition-all">
                         {t.nav.langLabel}
                     </button>
                 </div>
             </nav>
 
-            {/* Hero Section */}
-            <header
-                className={`py-16 px-6 text-center transition-all duration-700 ease-in-out bg-gradient-to-b from-[#1e293b] to-[#020617] ${
-                    activeFeature !== null
-                        ? "opacity-20 scale-95 blur-sm grayscale pointer-events-none"
-                        : "opacity-100 scale-100 blur-0 grayscale-0"
-                }`}
-            >
-                <div className="max-w-4xl mx-auto">
-                    <h2 className="text-3xl md:text-3xl font-black mb-6 leading-tight uppercase tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-300 to-indigo-500">
-                        {t.hero}
-                    </h2>
-                    <p className="text-xl md:text-2xl text-slate-400 font-light tracking-wide">
-                        {t.sub}
-                    </p>
-                </div>
-            </header>
-
-            {/* Main Content Area */}
-            <div className="max-w-6xl mx-auto px-6 py-12">
-                {activeFeature === null ? (
-                    /* GRID VIEW */
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 animate-in fade-in duration-700">
-                        {t.features.map((f, i) => (
-                            <div
-                                key={i}
-                                onClick={() => navigateToFeature(i)}
-                                className="p-8 rounded-2xl border border-blue-900/50 bg-[#0f172a] hover:border-cyan-500/50 shadow-2xl transition-all duration-500 group cursor-pointer"
-                            >
-                                <div className="flex items-center gap-4 mb-4">
-                                    <span
-                                        className="text-4xl drop-shadow-[0_0_10px_rgba(255,255,255,0.3)] group-hover:scale-110 transition-transform">
-                                        {f.icon}
-                                    </span>
-                                    <h3 className="text-2xl font-black text-blue-100 group-hover:text-cyan-400 transition-colors">
-                                        {f.title}
-                                    </h3>
-                                </div>
-                                <p className="text-slate-400 leading-relaxed text-lg font-light">
-                                    {f.desc}
-                                </p>
-                                <div
-                                    className="mt-4 text-cyan-500 text-sm font-bold uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity">
-                                    {lang === 'he' ? 'קרא עוד ←' : 'Learn More →'}
-                                </div>
-                            </div>
-                        ))}
+            {/* HERO SECTION - Removed completely when a section is active */}
+            {activeFeature === null && (
+                <header className="py-16 px-6 text-center bg-gradient-to-b from-[#1e293b] to-[#020617] animate-in fade-in zoom-in-95 duration-700">
+                    <div className="max-w-4xl mx-auto">
+                        <h2 className="text-3xl md:text-3xl font-black mb-6 leading-tight uppercase tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-300 to-indigo-500">
+                            {t.hero}
+                        </h2>
+                        <p className="text-xl md:text-2xl text-slate-400 font-light tracking-wide">
+                            {t.sub}
+                        </p>
                     </div>
-                ) : (
-                    /* DETAIL VIEW */
-                    <div className="max-w-4xl mx-auto animate-in fade-in slide-in-from-bottom-4 duration-500">
-                        <div
-                            className="p-10 rounded-3xl border border-cyan-500/30 bg-[#0f172a] shadow-[0_0_50px_rgba(6,182,212,0.1)]">
-                            <div className="flex items-center gap-6 mb-8">
-                                <span className="text-6xl">{t.features[activeFeature].icon}</span>
-                                <h2 className="text-4xl font-black text-white uppercase tracking-tighter">
-                                    {t.features[activeFeature].title}
-                                </h2>
-                            </div>
+                </header>
+            )}
 
-                            <div className="prose prose-invert max-w-none">
-                                <p className="text-xl text-slate-300 leading-loose">
-                                    {t.features[activeFeature].desc}
-                                </p>
-
-                                <ul className="mt-8 space-y-4 border-l-2 border-cyan-500/20 pl-6">
-                                    {t.features[activeFeature].details.map((detail, index) => (
-                                        <li key={index} className="flex items-start gap-3 text-slate-400 text-lg group">
-                                            <span
-                                                className="text-cyan-400 font-bold mt-1 group-hover:scale-125 transition-transform">
-                                                ✓
-                                            </span>
-                                            <span className="group-hover:text-slate-200 transition-colors">
-                                            {detail}
-                                            </span>
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
-
-                            {/* Navigation Buttons */}
-                            <div
-                                className="mt-12 flex flex-col md:flex-row gap-4 justify-between border-t border-slate-800 pt-8">
-                                <button
-                                    onClick={() => setActiveFeature(null)}
-                                    className="flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-slate-800 text-white hover:bg-slate-700 transition-all font-bold"
+            {/* MAIN CONTENT AREA */}
+            <main className={`flex-grow flex flex-col ${activeFeature !== null ? 'justify-center min-h-[70vh]' : ''}`}>
+                <div className="max-w-6xl mx-auto px-6 py-12 w-full">
+                    {activeFeature === null ? (
+                        /* GRID VIEW */
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 animate-in fade-in duration-700">
+                            {t.features.map((f, i) => (
+                                <div
+                                    key={i}
+                                    onClick={() => navigateToFeature(i)}
+                                    className="p-8 rounded-2xl border border-blue-900/50 bg-[#0f172a] hover:border-cyan-500/50 shadow-2xl transition-all duration-500 group cursor-pointer"
                                 >
-                                    {lang === 'he' ? '🏠 חזרה לדף הבית' : '🏠 Back to Home'}
-                                </button>
-
-                                <button
-                                    onClick={() => {
-                                        const next = (activeFeature + 1) % t.features.length;
-                                        navigateToFeature(next);
-                                    }}
-                                    className="flex items-center justify-center gap-2 px-8 py-3 rounded-xl bg-blue-600 text-white hover:bg-cyan-500 hover:shadow-[0_0_20px_rgba(6,182,212,0.5)] transition-all font-bold"
-                                >
-                                    {lang === 'he' ? 'לפיצ׳ר הבא' : 'Next Feature'}
-                                    <span className={lang === 'he' ? 'rotate-180' : ''}>➜</span>
-                                </button>
+                                    <div className="flex items-center gap-4 mb-4">
+                                        <span className="text-4xl group-hover:scale-110 transition-transform">{f.icon}</span>
+                                        <h3 className="text-2xl font-black text-blue-100 group-hover:text-cyan-400 transition-colors">{f.title}</h3>
+                                    </div>
+                                    <p className="text-slate-400 leading-relaxed text-lg font-light">{f.desc}</p>
+                                    <div className="mt-4 text-cyan-500 text-sm font-bold uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity">
+                                        {lang === 'he' ? 'קרא עוד ←' : 'Learn More →'}
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    ) : (
+                        /* DETAIL VIEW - Now sits where the Hero was */
+                        <div className="max-w-4xl mx-auto animate-in fade-in slide-in-from-top-8 duration-500">
+                            <div className="p-10 rounded-3xl border border-cyan-500/30 bg-[#0f172a] shadow-[0_0_50px_rgba(6,182,212,0.1)]">
+                                <div className="flex items-center gap-6 mb-8">
+                                    <span className="text-6xl">{t.features[activeFeature].icon}</span>
+                                    <h2 className="text-4xl font-black text-white uppercase tracking-tighter">
+                                        {t.features[activeFeature].title}
+                                    </h2>
+                                </div>
+                                <div className="prose prose-invert max-w-none">
+                                    <p className="text-xl text-slate-300 leading-loose mb-6">{t.features[activeFeature].desc}</p>
+                                    <ul className="mt-8 space-y-4 border-l-2 border-cyan-500/20 pl-6">
+                                        {t.features[activeFeature].details?.map((detail, index) => (
+                                            <li key={index} className="flex items-start gap-3 text-slate-400 text-lg group">
+                                                <span className="text-cyan-400 font-bold mt-1 group-hover:scale-125 transition-transform">✓</span>
+                                                <span className="group-hover:text-slate-200 transition-colors">{detail}</span>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                                <div className="mt-12 flex flex-col md:flex-row gap-4 justify-between border-t border-slate-800 pt-8">
+                                    <button onClick={() => setActiveFeature(null)} className="px-6 py-3 rounded-xl bg-slate-800 text-white hover:bg-slate-700 transition-all font-bold">
+                                        {lang === 'he' ? '🏠 חזרה' : '🏠 Back'}
+                                    </button>
+                                    <button onClick={() => navigateToFeature((activeFeature + 1) % t.features.length)} className="px-8 py-3 rounded-xl bg-blue-600 text-white hover:bg-cyan-500 transition-all font-bold">
+                                        {lang === 'he' ? 'הבא' : 'Next'} <span className={lang === 'he' ? 'rotate-180 inline-block' : ''}>➜</span>
+                                    </button>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                )}
-            </div>
+                    )}
+                </div>
+            </main>
 
-            {/* Portfolio Section */}
-            <section className="bg-[#0b1120] py-20 px-6">
+            {/* PORTFOLIO SECTION - Always visible */}
+            <section className="bg-[#0b1120] py-20 px-6 border-t border-slate-900">
                 <div className="max-w-6xl mx-auto text-center">
-                    <h2 className="text-4xl font-black mb-4 uppercase tracking-[0.2em] text-blue-500">
-                        {t.portfolioTitle}
-                    </h2>
-                    <p className="text-slate-500 mb-12 font-mono uppercase text-sm tracking-widest">
-                        {t.dashboardTag}
-                    </p>
+                    <h2 className="text-4xl font-black mb-4 uppercase tracking-[0.2em] text-blue-500">{t.portfolioTitle}</h2>
+                    <p className="text-slate-500 mb-12 font-mono uppercase text-sm tracking-widest">{t.dashboardTag}</p>
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
                         {t.sites.map((site, idx) => (
-                            <a
-                                href={site.url}
-                                key={idx}
-                                className="group block bg-[#1e293b]/30 border border-slate-800 rounded-xl overflow-hidden hover:border-blue-500/50 transition-all duration-300"
-                            >
-                                <div
-                                    className="h-48 bg-slate-800 flex items-center justify-center group-hover:bg-blue-900/40 transition-colors relative overflow-hidden">
-                                    <div
-                                        className="absolute inset-0 bg-gradient-to-t from-blue-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"/>
-                                    <span
-                                        className="text-6xl font-black text-slate-700 group-hover:text-blue-400/30 transition-all">
-                                        {site.name[0]}
-                                    </span>
+                            <a href={site.url} key={idx} className="group block bg-[#1e293b]/30 border border-slate-800 rounded-xl overflow-hidden hover:border-blue-500/50 transition-all duration-300">
+                                <div className="h-48 bg-slate-800 flex items-center justify-center group-hover:bg-blue-900/40 transition-colors relative">
+                                    <span className="text-6xl font-black text-slate-700 group-hover:text-blue-400/30 transition-all">{site.name[0]}</span>
                                 </div>
                                 <div className="p-5 text-left">
-                                    <p className="text-[10px] font-bold text-cyan-500 uppercase mb-1 tracking-[3px]">
-                                        {site.category}
-                                    </p>
-                                    <h4 className="text-xl font-bold text-slate-100 group-hover:text-white">
-                                        {site.name}
-                                    </h4>
+                                    <p className="text-[10px] font-bold text-cyan-500 uppercase mb-1 tracking-[3px]">{site.category}</p>
+                                    <h4 className="text-xl font-bold text-slate-100 group-hover:text-white">{site.name}</h4>
                                 </div>
                             </a>
                         ))}
@@ -200,14 +137,9 @@ function App() {
                 </div>
             </section>
 
-            {/* Footer */}
+            {/* FOOTER - Always visible */}
             <footer className="bg-black text-white py-16 text-center px-6 border-t border-blue-900/30">
-                <p className="text-3xl font-black mb-4 italic tracking-tighter text-blue-500">
-                    EXTREME CUSTOMIZATION. ABSOLUTE CONTROL.
-                </p>
-                <p className="text-slate-500 font-mono text-xs mb-4 uppercase tracking-[0.4em]">
-                    Building the digital future
-                </p>
+                <p className="text-3xl font-black mb-4 italic tracking-tighter text-blue-500 uppercase">Extreme Customization. Absolute Control.</p>
                 <div className="mt-8 pt-8 border-t border-slate-900 text-xs opacity-40 font-mono">
                     © {new Date().getFullYear()} {t.title}
                 </div>
