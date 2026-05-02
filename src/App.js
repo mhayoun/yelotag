@@ -44,7 +44,7 @@ function App() {
                 </div>
             </nav>
 
-            {/* HERO SECTION - Removed completely when a section is active */}
+            {/* HERO SECTION */}
             {activeFeature === null && (
                 <header className="py-16 px-6 text-center bg-gradient-to-b from-[#1e293b] to-[#020617] animate-in fade-in zoom-in-95 duration-700">
                     <div className="max-w-4xl mx-auto">
@@ -82,7 +82,7 @@ function App() {
                             ))}
                         </div>
                     ) : (
-                        /* DETAIL VIEW - Now sits where the Hero was */
+                        /* DETAIL VIEW */
                         <div className="max-w-4xl mx-auto animate-in fade-in slide-in-from-top-8 duration-500">
                             <div className="p-10 rounded-3xl border border-cyan-500/30 bg-[#0f172a] shadow-[0_0_50px_rgba(6,182,212,0.1)]">
                                 <div className="flex items-center gap-6 mb-8">
@@ -102,13 +102,35 @@ function App() {
                                         ))}
                                     </ul>
                                 </div>
-                                <div className="mt-12 flex flex-col md:flex-row gap-4 justify-between border-t border-slate-800 pt-8">
-                                    <button onClick={() => setActiveFeature(null)} className="px-6 py-3 rounded-xl bg-slate-800 text-white hover:bg-slate-700 transition-all font-bold">
-                                        {lang === 'he' ? '🏠 חזרה' : '🏠 Back'}
-                                    </button>
-                                    <button onClick={() => navigateToFeature((activeFeature + 1) % t.features.length)} className="px-8 py-3 rounded-xl bg-blue-600 text-white hover:bg-cyan-500 transition-all font-bold">
-                                        {lang === 'he' ? 'הבא' : 'Next'} <span className={lang === 'he' ? 'rotate-180 inline-block' : ''}>➜</span>
-                                    </button>
+
+                                {/* NAVIGATION BUTTONS */}
+                                <div className="mt-12 border-t border-slate-800 pt-8">
+                                    <div className="flex flex-col md:flex-row gap-4 justify-between items-center">
+                                        {/* Home Button */}
+                                        <button
+                                            onClick={() => setActiveFeature(null)}
+                                            className="w-full md:w-auto px-6 py-3 rounded-xl bg-slate-800 text-white hover:bg-slate-700 transition-all font-bold"
+                                        >
+                                            {lang === 'he' ? '🏠 חזרה לדף הבית' : '🏠 Back to Home'}
+                                        </button>
+
+                                        {/* Prev/Next Group */}
+                                        <div className="flex gap-4 w-full md:w-auto">
+                                            <button
+                                                onClick={() => navigateToFeature((activeFeature - 1 + t.features.length) % t.features.length)}
+                                                className="flex-1 md:flex-none px-6 py-3 rounded-xl border border-blue-500/30 text-blue-400 hover:bg-blue-500/10 transition-all font-bold"
+                                            >
+                                                <span className={lang === 'he' ? '' : 'rotate-180 inline-block'}>➜</span> {lang === 'he' ? 'הקודם' : 'Prev'}
+                                            </button>
+
+                                            <button
+                                                onClick={() => navigateToFeature((activeFeature + 1) % t.features.length)}
+                                                className="flex-1 md:flex-none px-8 py-3 rounded-xl bg-blue-600 text-white hover:bg-cyan-500 transition-all font-bold shadow-[0_0_15px_rgba(37,99,235,0.3)]"
+                                            >
+                                                {lang === 'he' ? 'הבא' : 'Next'} <span className={lang === 'he' ? 'rotate-180 inline-block' : ''}>➜</span>
+                                            </button>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -116,7 +138,7 @@ function App() {
                 </div>
             </main>
 
-            {/* PORTFOLIO SECTION - Always visible */}
+            {/* PORTFOLIO SECTION */}
             <section className="bg-[#0b1120] py-20 px-6 border-t border-slate-900">
                 <div className="max-w-6xl mx-auto text-center">
                     <h2 className="text-4xl font-black mb-4 uppercase tracking-[0.2em] text-blue-500">{t.portfolioTitle}</h2>
@@ -137,7 +159,7 @@ function App() {
                 </div>
             </section>
 
-            {/* FOOTER - Always visible */}
+            {/* FOOTER */}
             <footer className="bg-black text-white py-16 text-center px-6 border-t border-blue-900/30">
                 <p className="text-3xl font-black mb-4 italic tracking-tighter text-blue-500 uppercase">Extreme Customization. Absolute Control.</p>
                 <div className="mt-8 pt-8 border-t border-slate-900 text-xs opacity-40 font-mono">
