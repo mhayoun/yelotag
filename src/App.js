@@ -8,28 +8,43 @@ function App() {
 
     const handleFormSubmit = async (e) => {
         e.preventDefault();
+        console.log("--- Form Submission Started ---");
+        console.log("Targeting Formspree ID: xlgzgpoo");
+        console.log("Payload:", formData);
 
-        // Change "YOUR_FORM_ID" to the ID you get from Formspree.io
-        const response = await fetch("https://formspree.io/f/xlgzgpoo", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-                name: formData.name,
-                email: formData.email,
-                message: formData.message,
-            }),
-        });
+        try {
+            const response = await fetch("https://formspree.io/f/xlgzgpoo", {
+                method: "POST",
+                headers: {
+                    "Accept": "application/json", // Added this for better compatibility
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    name: formData.name,
+                    email: formData.email,
+                    message: formData.message,
+                }),
+            });
 
-        if (response.ok) {
-            alert(lang === 'he' ? 'ההודעה נשלחה בהצלחה!' : 'Message sent successfully!');
-            setFormData({name: '', email: '', phone: '', message: ''}); // Clear form
-        } else {
-            alert('Oops! There was a problem.');
+            const data = await response.json(); // Get the actual JSON response from Formspree
+
+            if (response.ok) {
+                console.log("Success! Response Data:", data);
+                alert(lang === 'he' ? 'ההודעה נשלחה בהצלחה!' : 'Message sent successfully!');
+                setFormData({name: '', email: '', phone: '', message: ''});
+            } else {
+                // This catches server-side errors (e.g., 404, 401, 500)
+                console.error("Server Error Status:", response.status);
+                console.error("Formspree Error Details:", data);
+                alert(`Error: ${data.error || 'Something went wrong on the server'}`);
+            }
+        } catch (error) {
+            // This catches network errors (e.g., Blocked by Browser, No Internet, CORS)
+            console.error("CRITICAL NETWORK ERROR:", error);
+            alert('Network error. Check your console (F12) for details.');
         }
     };
-
+    
     const navigateToFeature = (index) => {
         setActiveFeature(index);
         window.scrollTo({top: 0, behavior: 'smooth'});
