@@ -6,10 +6,28 @@ function App() {
     const [activeFeature, setActiveFeature] = useState(null);
     const [formData, setFormData] = useState({name: '', email: '', phone: '', message: ''});
 
-    const handleFormSubmit = (e) => {
+    const handleFormSubmit = async (e) => {
         e.preventDefault();
-        console.log("Form Submitted:", formData);
-        alert(lang === 'he' ? 'ההודעה נשלחה בהצלחה!' : 'Message sent successfully!');
+
+        // Change "YOUR_FORM_ID" to the ID you get from Formspree.io
+        const response = await fetch("https://formspree.io/f/xlgzgpoo", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                name: formData.name,
+                email: formData.email,
+                message: formData.message,
+            }),
+        });
+
+        if (response.ok) {
+            alert(lang === 'he' ? 'ההודעה נשלחה בהצלחה!' : 'Message sent successfully!');
+            setFormData({name: '', email: '', phone: '', message: ''}); // Clear form
+        } else {
+            alert('Oops! There was a problem.');
+        }
     };
 
     const navigateToFeature = (index) => {
@@ -267,6 +285,7 @@ function App() {
                         </div>
 
                         {/* COLUMN 1: CONTACT US */}
+                        {/* COLUMN 1: CONTACT US */}
                         <div className="bg-[#0f172a]/50 p-8 rounded-2xl border border-slate-800 shadow-xl">
                             <h3 className="text-2xl font-black mb-6 text-white uppercase tracking-tight">
                                 {t.contactTitle}
@@ -277,6 +296,7 @@ function App() {
                                         type="text"
                                         placeholder={lang === 'he' ? 'שם מלא' : 'Full Name'}
                                         className="bg-slate-900 border border-slate-700 rounded-lg p-3 text-sm focus:border-blue-500 outline-none text-white w-full"
+                                        value={formData.name}
                                         onChange={(e) => setFormData({...formData, name: e.target.value})}
                                         required
                                     />
@@ -284,6 +304,7 @@ function App() {
                                         type="email"
                                         placeholder={lang === 'he' ? 'אימייל' : 'Email'}
                                         className="bg-slate-900 border border-slate-700 rounded-lg p-3 text-sm focus:border-blue-500 outline-none text-white w-full"
+                                        value={formData.email}
                                         onChange={(e) => setFormData({...formData, email: e.target.value})}
                                         required
                                     />
@@ -292,6 +313,7 @@ function App() {
                                     rows="3"
                                     placeholder={lang === 'he' ? 'הודעה' : 'Message'}
                                     className="w-full bg-slate-900 border border-slate-700 rounded-lg p-3 text-sm focus:border-blue-500 outline-none text-white"
+                                    value={formData.message}
                                     onChange={(e) => setFormData({...formData, message: e.target.value})}
                                     required
                                 ></textarea>
