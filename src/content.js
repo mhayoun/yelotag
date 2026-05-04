@@ -19,9 +19,9 @@ export const content = {
                 icon: "🧠",
                 desc: "Create new HTML pages instantly with integrated AI. Add content, sections, and professional layouts without writing code.",
                 details: [
-                    "Smart Layouts: Tell the AI what the page is for (e.g., 'A service page for a law firm'), and it generates the structure and placeholder text.",
-                    "Instant SEO: The generator automatically suggests meta tags and headers optimized for search engines.",
-                    "Zero Coding: High-performance HTML output that doesn't require a developer to finalize."
+                    "Smart Layouts: Tell the AI what the page is, and it generates the html structure and placeholder text.",
+                    "Zero Coding: High-performance HTML output that doesn't require a developer to finalize.",
+                    "Want to insert an image or a PDF? The HTML code is generated automatically."
                 ]
             },
             {
@@ -32,7 +32,7 @@ export const content = {
                 details: [
                     "Dynamic Menu Builder: Drag-and-drop hierarchy to create complex navigation with nested sub-menus.",
                     "Real-time Updates: Edits go live instantly across the site without waiting for a server rebuild.",
-                    "Total Facade Control: Modify the visual 'skin' of your site while maintaining the robust underlying architecture."
+                    "Each WhatsApp number automatically generates a button that opens a chat directly with that number."
                 ]
             },
             {
@@ -50,11 +50,11 @@ export const content = {
                 title: "Import, Export & Branding",
                 shortName: "Data",
                 icon: "📡",
-                desc: "Upload your logo, connect your custom domain, and export your data for manual backups. Your business, your data.",
+                desc: "Upload your logo, and export your data for manual backups. Your business, your data.",
                 details: [
-                    "Ownership First: Export your entire site content as a JSON/CSV file at any time for your own records.",
+                    "Ownership First: Export your entire site content as a JSON file at any time for your own records.",
                     "Brand Identity: One-click logo and favicon updates that propagate through all generated pages.",
-                    "Seamless Connection: Easy DNS integration to link your professional domain in minutes."
+                    "Import your backup files to restore menus, news and footer."
                 ]
             }
         ],
@@ -62,8 +62,8 @@ export const content = {
         dashboardTag: "Run your business from one dashboard",
         sites: [
             {name: "Zdakah.com", url: "https://www.zdakah.com", category: "CrownFunding", image:"/images/zdakah.png"},
-            {name: "Mercazi.info", url: "https://www.mercazi.info", category: "Children Center", image:"/images/zmiha.png"},
-            {name: "mercaz-zmicha.com", url: "https://mercaz-zmicha.com", category: "Education", image:"/images/mercazi.png"},
+            {name: "Mercazi.info", url: "https://www.mercazi.info", category: "Education", image:"/images/zmiha.png"},
+            {name: "mercaz-zmicha.com", url: "https://mercaz-zmicha.com", category: "Children Center", image:"/images/mercazi.png"},
             {name: "henne-five.vercel.app (בתהליך)", url: "https://henne-five.vercel.app/", category: "Evenements", image:"/images/henne.png"},
             {name: "CompBuilder.com (בתהליך)", url: "https://unsteadfast-dionna-poignantly.ngrok-free.dev", category: "System Modeling", image:"/images/CompBuilder.png"},
             {name: "asado-catering.vercel.app (בתהליך)", url: "https://asado-catering.vercel.app/", category: "Catering", image:"/images/asado.png"},
@@ -91,8 +91,8 @@ export const content = {
                 desc: "צרו דפי HTML חדשים באופן מיידי עם כלי AI מובנה. הוסיפו תוכן ומבנה מקצועי ללא צורך בידע בתכנות.",
                 details: [
                     "פריסות חכמות: פשוט תארו ל-AI את מטרת הדף, והוא יבנה את המבנה והטקסט הראשוני עבורכם.",
-                    "SEO מובנה: המחולל מציע תגיות מטא וכותרות מותאמות למנועי חיפוש באופן אוטומטי.",
-                    "אפס קוד: פלט HTML מהיר ואיכותי שאינו דורש התערבות מתכנת."
+                    "אפס קוד: פלט HTML מהיר ואיכותי שאינו דורש התערבות מתכנת.",
+                    "רוצים להוסיף תמונה או קובץ PDF? קוד ה-HTML ייווצר באופן אוטומטי."
                 ]
             },
             {
@@ -103,7 +103,7 @@ export const content = {
                 details: [
                     "בונה תפריטים דינמי: ניהול היררכיית האתר בגרירה ושחרור (Drag-and-drop), כולל תפריטים מקוננים.",
                     "עדכונים בזמן אמת: כל שינוי מתעדכן באתר מיד ללא המתנה לעיבוד שרת.",
-                    "שליטה חזותית: עדכון חזית האתר תוך שמירה על תשתית טכנולוגית יציבה וחזקה."
+                    "כל מספר וואטסאפ יוצר באופן אוטומטי כפתור המאפשר פתיחת שיחה ישירה עם המספר."
                 ]
             },
             {
@@ -123,9 +123,9 @@ export const content = {
                 icon: "📡",
                 desc: "הוספת לוגו, חיבור דומיין רשמי, וייצוא נתונים לצורך גיבוי. המידע שלכם נשאר בידיים שלכם.",
                 details: [
-                    "הנתונים שלכם: ייצוא כל תוכן האתר לקובץ JSON/CSV בכל רגע לצורך גיבוי אישי.",
-                    "זהות מותג: עדכון לוגו ו-Favicon בלחיצת כפתור אחת שמתעדכנת בכל דפי האתר.",
-                    "חיבור דומיין: ממשק פשוט לחיבור הדומיין האישי שלכם בתוך דקות ספורות."
+                    "הנתונים שלכם: ייצוא כל תוכן האתר לקובץ JSON בכל רגע לצורך גיבוי אישי.",
+                    "זהות מותג: עדכון לוגו בלחיצת כפתור אחת שמתעדכנת בכל דפי האתר.",
+                    "ייבוא קובצי גיבוי (JSON) לשחזור התפריטים, החדשות והתחתית (Footer)."
                 ]
             }
         ],
@@ -133,8 +133,8 @@ export const content = {
         dashboardTag: "נהלו את כל העסק מלוח בקרה אחד",
         sites: [
             {name: "Zdakah.com", url: "https://www.zdakah.com", category: "גיוס המונים", image:"/images/zdakah.png"},
-            {name: "Mercazi.info", url: "https://www.mercazi.info", category: "מרכז לילדים", image:"/images/mercazi.png"},
-            {name: "mercaz-zmicha.com", url: "https://mercaz-zmicha.com", category: "חינוך", image:"/images/zmiha.png"},
+            {name: "Mercazi.info", url: "https://www.mercazi.info", category: "חינוך", image:"/images/mercazi.png"},
+            {name: "mercaz-zmicha.com", url: "https://mercaz-zmicha.com", category: "מרכז לילדים", image:"/images/zmiha.png"},
             {name: "henne-five.vercel.app (in process)", url: "https://henne-five.vercel.app/", category: "ארועים", image:"/images/henne.png"},
             {name: "CompBuilder.com (in process)", url: "https://unsteadfast-dionna-poignantly.ngrok-free.dev", category: "מדע", image:"/images/CompBuilder.png"},
             {name: "asado-catering.vercel.app (in process)", url: "https://asado-catering.vercel.app/", category: "קטרינג", image:"/images/asado.png"},
