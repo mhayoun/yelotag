@@ -67,7 +67,7 @@ export const content = {
             {name: "henne-five.vercel.app (בתהליך)", url: "https://henne-five.vercel.app/", category: "Evenements", image:"/images/henne.png"},
             {name: "CompBuilder.com (בתהליך)", url: "https://unsteadfast-dionna-poignantly.ngrok-free.dev", category: "System Modeling", image:"/images/CompBuilder.png"},
             {name: "asado-catering.vercel.app (בתהליך)", url: "https://asado-catering.vercel.app/", category: "Catering", image:"/images/asado.png"},
-            {name: "memo4unix.com", url: "https://memo4unix.com", category: "Technology", image:"/images/asado.png"}
+            {name: "memo4unix.com", url: "https://memo4unix.com", category: "Technology", image:"/images/memo.png"}
         ]
     },
     he: {
