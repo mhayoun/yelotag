@@ -68,7 +68,8 @@ export const content = {
             {name: "CompBuilder.com (בתהליך)", url: "https://unsteadfast-dionna-poignantly.ngrok-free.dev", category: "System Modeling", image:"/images/CompBuilder.png"},
             {name: "asado-catering.vercel.app (בתהליך)", url: "https://asado-catering.vercel.app/", category: "Catering", image:"/images/asado.png"},
             {name: "memo4unix.com", url: "https://memo4unix.com", category: "Technology", image:"/images/memo.png"},
-            {name: "bhhj.vercel.app", url: "https://bhhj.vercel.app/", category: "Country Club", image:"/images/bhhj.png"}
+            {name: "bhhj.vercel.app", url: "https://bhhj.vercel.app/", category: "Country Club", image:"/images/bhhj.png"},
+            {name: "hamoshava.vercel.app", url: "https://hamoshava.vercel.app/", category: "Country Club", image:"/images/hamoshava.png"},
         ]
     },
     he: {
@@ -140,7 +141,8 @@ export const content = {
             {name: "CompBuilder.com (in process)", url: "https://unsteadfast-dionna-poignantly.ngrok-free.dev", category: "מדע", image:"/images/CompBuilder.png"},
             {name: "asado-catering.vercel.app (in process)", url: "https://asado-catering.vercel.app/", category: "קטרינג", image:"/images/asado.png"},
             {name: "memo4unix.com", url: "https://memo4unix.com", category: "טכנולוגיה", image:"/images/memo.png"},
-            {name: "bhhj.vercel.app", url: "https://bhhj.vercel.app/", category: "מועדון ספורט", image:"/images/bhhj.png"}
+            {name: "bhhj.vercel.app", url: "https://bhhj.vercel.app/", category: "מועדון ספורט", image:"/images/bhhj.png"},
+            {name: "hamoshava.vercel.app", url: "https://hamoshava.vercel.app/", category: "מועדון ספורט", image:"/images/hamoshava.png"},
         ]
     }
 };
