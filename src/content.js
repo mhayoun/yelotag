@@ -70,6 +70,9 @@ export const content = {
             {name: "memo4unix.com", url: "https://memo4unix.com", category: "Technology", image:"/images/memo.png"},
             {name: "bhhj.vercel.app", url: "https://bhhj.vercel.app/", category: "Country Club", image:"/images/bhhj.png"},
             {name: "hamoshava.vercel.app", url: "https://hamoshava.vercel.app/", category: "Country Club", image:"/images/hamoshava.png"},
+            {name: "topclubcarmiel.vercel.app", url: "https://topclubcarmiel.vercel.app/", category: "Country Club", image:"/images/topclubcarmiel.png"},
+            {name: "moadon-omer.vercel.app", url: "https://moadon-omer.vercel.app/", category: "Country Club", image:"/images/moadon-omer.png"}
+
         ]
     },
     he: {
@@ -143,6 +146,8 @@ export const content = {
             {name: "memo4unix.com", url: "https://memo4unix.com", category: "טכנולוגיה", image:"/images/memo.png"},
             {name: "bhhj.vercel.app", url: "https://bhhj.vercel.app/", category: "מועדון ספורט", image:"/images/bhhj.png"},
             {name: "hamoshava.vercel.app", url: "https://hamoshava.vercel.app/", category: "מועדון ספורט", image:"/images/hamoshava.png"},
+            {name: "topclubcarmiel.vercel.app", url: "https://topclubcarmiel.vercel.app/", category: "מועדון ספורט", image:"/images/topclubcarmiel.png"},
+            {name: "moadon-omer.vercel.app", url: "https://moadon-omer.vercel.app/", category: "מועדון ספורט", image:"/images/moadon-omer.png"}
         ]
     }
 };
