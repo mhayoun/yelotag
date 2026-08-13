@@ -62,17 +62,21 @@ export const content = {
         dashboardTag: "Run your business from one dashboard",
         sites: [
             {name: "Zdakah.com", url: "https://www.zdakah.com", category: "CrownFunding", image:"/images/zdakah.png"},
-            {name: "Mercazi.info", url: "https://www.mercazi.info", category: "Education", image:"/images/zmiha.png"},
             {name: "mercaz-zmicha.com", url: "https://mercaz-zmicha.com", category: "Children Center", image:"/images/mercazi.png"},
-            {name: "henne-five.vercel.app (בתהליך)", url: "https://henne-five.vercel.app/", category: "Evenements", image:"/images/henne.png"},
+            {name: "henne-five (בתהליך)", url: "https://henne-five.vercel.app/", category: "Evenements", image:"/images/henne.png"},
             {name: "CompBuilder.com (בתהליך)", url: "https://unsteadfast-dionna-poignantly.ngrok-free.dev", category: "System Modeling", image:"/images/CompBuilder.png"},
-            {name: "asado-catering.vercel.app (בתהליך)", url: "https://asado-catering.vercel.app/", category: "Catering", image:"/images/asado.png"},
+            {name: "asado-catering (בתהליך)", url: "https://asado-catering.vercel.app/", category: "Catering", image:"/images/asado.png"},
             {name: "memo4unix.com", url: "https://memo4unix.com", category: "Technology", image:"/images/memo.png"},
-            {name: "bhhj.vercel.app", url: "https://bhhj.vercel.app/", category: "Country Club", image:"/images/bhhj.png"},
-            {name: "hamoshava.vercel.app", url: "https://hamoshava.vercel.app/", category: "Country Club", image:"/images/hamoshava.png"},
-            {name: "topclubcarmiel.vercel.app", url: "https://topclubcarmiel.vercel.app/", category: "Country Club", image:"/images/topclubcarmiel.png"},
-            {name: "moadon-omer.vercel.app", url: "https://moadon-omer.vercel.app/", category: "Country Club", image:"/images/moadon-omer.png"}
-
+            {name: "bhhj", url: "https://bhhj.vercel.app/", category: "Country Club", image:"/images/bhhj.png"},
+            {name: "hamoshava", url: "https://hamoshava.vercel.app/", category: "Country Club", image:"/images/hamoshava.png"},
+            {name: "topclubcarmiel", url: "https://topclubcarmiel.vercel.app/", category: "Country Club", image:"/images/topclubcarmiel.png"},
+            {name: "moadon-omer", url: "https://moadon-omer.vercel.app/", category: "Country Club", image:"/images/moadon-omer.png"},
+            {name: "ramatefal", url: "https://ramatefal.vercel.app/", category: "Country Club", image:"/images/ramatefal.png"},
+            //{name: "Mercazi.info", url: "https://www.mercazi.info", category: "Education", image:"/images/zmiha.png"},
+            {name: "mercazi.info", url: "https://rav-aaron-butbul.vercel.app/", category: "Education", image:"/images/mercazi.info.png"},
+            {name: "produits-casher", url: "https://produits-casher.vercel.app/", category: "products", image:"/images/produits-casher.png"},
+            {name: "marrakech555", url: "https://marrakech555.vercel.app/", category: "evenements", image:"/images/marrakech555.png"},
+            {name: "trend-tape", url: "https://trend-tape.vercel.app/", category: "stocks", image:"/images/trend-tape.png"},
         ]
     },
     he: {
@@ -138,7 +142,6 @@ export const content = {
         dashboardTag: "נהלו את כל העסק מלוח בקרה אחד",
         sites: [
             {name: "Zdakah.com", url: "https://www.zdakah.com", category: "גיוס המונים", image:"/images/zdakah.png"},
-            {name: "Mercazi.info", url: "https://www.mercazi.info", category: "חינוך", image:"/images/mercazi.png"},
             {name: "mercaz-zmicha.com", url: "https://mercaz-zmicha.com", category: "מרכז לילדים", image:"/images/zmiha.png"},
             {name: "henne-five.vercel.app (in process)", url: "https://henne-five.vercel.app/", category: "ארועים", image:"/images/henne.png"},
             {name: "CompBuilder.com (in process)", url: "https://unsteadfast-dionna-poignantly.ngrok-free.dev", category: "מדע", image:"/images/CompBuilder.png"},
@@ -147,7 +150,13 @@ export const content = {
             {name: "bhhj.vercel.app", url: "https://bhhj.vercel.app/", category: "מועדון ספורט", image:"/images/bhhj.png"},
             {name: "hamoshava.vercel.app", url: "https://hamoshava.vercel.app/", category: "מועדון ספורט", image:"/images/hamoshava.png"},
             {name: "topclubcarmiel.vercel.app", url: "https://topclubcarmiel.vercel.app/", category: "מועדון ספורט", image:"/images/topclubcarmiel.png"},
-            {name: "moadon-omer.vercel.app", url: "https://moadon-omer.vercel.app/", category: "מועדון ספורט", image:"/images/moadon-omer.png"}
+            {name: "moadon-omer.vercel.app", url: "https://moadon-omer.vercel.app/", category: "מועדון ספורט", image:"/images/moadon-omer.png"},
+            {name: "ramatefal.vercel.app", url: "https://ramatefal.vercel.app/", category: "מועדון ספורט", image:"/images/ramatefal.png"},
+            {name: "mercazi.info", url: "https://rav-aaron-butbul.vercel.app/", category: "הלכה", image:"/images/mercazi.info.png"},
+            //{name: "Mercazi.info", url: "https://www.mercazi.info", category: "חינוך", image:"/images/mercazi.png"},
+            {name: "produits-casher.vercel.app", url: "https://produits-casher.vercel.app/", category: "מוצרים", image:"/images/produits-casher.png"},
+            {name: "marrakech555.vercel.app", url: "https://marrakech555.vercel.app/", category: "אירועים", image:"/images/marrakech555.png"},
+            {name: "trend-tape", url: "https://trend-tape.vercel.app/", category: "מניות", image:"/images/trend-tape.png"},
         ]
     }
 };
