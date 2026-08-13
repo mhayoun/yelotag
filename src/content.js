@@ -139,7 +139,8 @@ export const content = {
             {name: "henne-five.vercel.app (in process)", url: "https://henne-five.vercel.app/", category: "ארועים", image:"/images/henne.png"},
             {name: "CompBuilder.com (in process)", url: "https://unsteadfast-dionna-poignantly.ngrok-free.dev", category: "מדע", image:"/images/CompBuilder.png"},
             {name: "asado-catering.vercel.app (in process)", url: "https://asado-catering.vercel.app/", category: "קטרינג", image:"/images/asado.png"},
-            {name: "memo4unix.com", url: "https://memo4unix.com", category: "טכנולוגיה", image:"/images/memo.png"}
+            {name: "memo4unix.com", url: "https://memo4unix.com", category: "טכנולוגיה", image:"/images/memo.png"},
+            {name: "bhhj.vercel.app", url: "https://bhhj.vercel.app/", category: "מועדון ספורט", image:"/images/bhhj.png"}
         ]
     }
 };
