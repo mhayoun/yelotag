@@ -78,7 +78,8 @@ export const content = {
             {name: "marrakech-daf", url: "https://daf-beige.vercel.app/", category: "evenements", image:"/images/daf-nehita.png"},
             {name: "trend-tape", url: "https://trend-tape.vercel.app/", category: "stocks", image:"/images/trend-tape.png"},
             {name: "catering-bklick", url: "https://catering-bklick.vercel.app/", category: "Catering", image:"/images/catering.png"},
-            {name: "Rav Avishay Taharani", url: "https://rav-avishay-taharani.vercel.app/", category: "Education", image:"/images/ravTaharani.png"},
+            {name: "רב אבישי טהרני שליטה", url: "https://rav-avishay-taharani.vercel.app/", category: "Education", image:"/images/ravTaharani.png"},
+            {name: "אשר חיון", url: "https://asherhayoun.com", category: "מוזיקה", image:"/images/asherhayoun.png"},
         ]
     },
     he: {
@@ -160,7 +161,8 @@ export const content = {
             {name: "marrakech-daf", url: "https://daf-beige.vercel.app/", category: "אירועים", image:"/images/daf-nehita.png"},
             {name: "trend-tape", url: "https://trend-tape.vercel.app/", category: "מניות", image:"/images/trend-tape.png"},
             {name: "catering-bklick", url: "https://catering-bklick.vercel.app/", category: "קייטרינג", image:"/images/catering.png"},
-            {name: "Rav Avishay Taharani", url: "https://rav-avishay-taharani.vercel.app/", category: "חינוך", image:"/images/ravTaharani.png"},
+            {name: "Rav Avishay Taharani Chlita", url: "https://rav-avishay-taharani.vercel.app/", category: "חינוך", image:"/images/ravTaharani.png"},
+            {name: "Asher Hayoun", url: "https://asherhayoun.com", category: "מוזיקה", image:"/images/asherhayoun.png"},
         ]
     }
 };
