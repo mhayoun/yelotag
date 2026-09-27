@@ -78,7 +78,7 @@ export const content = {
             {name: "marrakech-daf", url: "https://daf-beige.vercel.app/", category: "evenements", image:"/images/daf-nehita.png"},
             {name: "trend-tape", url: "https://trend-tape.vercel.app/", category: "stocks", image:"/images/trend-tape.png"},
             {name: "catering-bklick", url: "https://catering-bklick.vercel.app/", category: "Catering", image:"/images/catering.png"},
-
+            {name: "Rav Avishay Taharani", url: "https://rav-avishay-taharani.vercel.app/", category: "Education", image:"/images/ravTaharani.png"},
         ]
     },
     he: {
@@ -157,9 +157,10 @@ export const content = {
             {name: "mercazi.org", url: "https://www.mercazi.org", category: "חינוך", image:"/images/mercazi.png"},
             {name: "produits-casher", url: "https://produits-casher.vercel.app/", category: "מוצרים", image:"/images/produits-casher.png"},
             {name: "marrakech555", url: "https://marrakech555.vercel.app/", category: "אירועים", image:"/images/marrakech555.png"},
-            {name: "marrakech-daf", url: "https://daf-beige.vercel.app/", category: "evenements", image:"/images/daf-nehita.png"},
+            {name: "marrakech-daf", url: "https://daf-beige.vercel.app/", category: "אירועים", image:"/images/daf-nehita.png"},
             {name: "trend-tape", url: "https://trend-tape.vercel.app/", category: "מניות", image:"/images/trend-tape.png"},
-            {name: "catering-bklick", url: "https://catering-bklick.vercel.app/", category: "Catering", image:"/images/catering.png"},
+            {name: "catering-bklick", url: "https://catering-bklick.vercel.app/", category: "קייטרינג", image:"/images/catering.png"},
+            {name: "Rav Avishay Taharani", url: "https://rav-avishay-taharani.vercel.app/", category: "חינוך", image:"/images/ravTaharani.png"},
         ]
     }
 };
